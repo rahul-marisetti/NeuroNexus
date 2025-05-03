@@ -19,4 +19,4 @@ A machine learning web application that predicts whether a passenger would have 
 ### 1. Clone Repository
 ```bash
 git clone https://github.com/rahul-marisetti/NeuroNexus.git
-cd titanic-survival-predictor
+cd NeuroNexus
