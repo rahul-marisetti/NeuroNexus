@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(to right, #2c3e50, #3498db);
+            padding: 20px;
+        }
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #2c3e50;
+            font-weight: bold;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #27ae60;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Passenger Information</h2>
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label>Passenger Class:</label>
+                <select name="pclass" required>
+                    <option value="1">First Class</option>
+                    <option value="2">Second Class</option>
+                    <option value="3">Third Class</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Gender:</label>
+                <select name="sex" required>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="number" name="age" step="0.1" required>
+            </div>
+            <div class="form-group">
+                <label>Siblings/Spouses Aboard:</label>
+                <input type="number" name="sibsp" required>
+            </div>
+            <div class="form-group">
+                <label>Parents/Children Aboard:</label>
+                <input type="number" name="parch" required>
+            </div>
+            <div class="form-group">
+                <label>Fare:</label>
+                <input type="number" name="fare" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>Cabin:</label>
+                <input type="text" name="cabin">
+            </div>
+            <div class="form-group">
+                <label>Embarked:</label>
+                <select name="embarked" required>
+                    <option value="S">Southampton</option>
+                    <option value="C">Cherbourg</option>
+                    <option value="Q">Queenstown</option>
+                </select>
+            </div>
+            <button type="submit">Predict Survival</button>
+        </form>
+    </div>
+</body>
+</html>
